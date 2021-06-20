@@ -1,4 +1,5 @@
 import json
+from collections import namedtuple
 
 
 def convert_to_json(data):

@@ -1,14 +1,18 @@
 from django.db import models
+from .base import model_base
+content = '{"promissoryAmount":" ", ' \
+          '"promissoryNote":"", "nationalID":"", ' \
+          '"address":"", "promissoryAddress":"", ' \
+          '"promissoryDate":"","promissoryLastDate":"", ' \
+          '"promissoryNoticeDate":"", "promissoryCourt":"", "Date":""}'
 
-content = "{promissoryAmount:, promissoryNote:, nationalID:, Address:, " \
-          "promissoryAddress:,promissoryDate:,promissoryLastDate:, promissoryNoticeDate:, promissoryCourt:," \
-          "Date:}"
+items = "{[1,2,3]}"
 
 
 class Consumer(models.Model):
-    OrderID = models.TextField()
-    LoginID = models.TextField(primary_key=True, verbose_name="LineID")
-    Name = models.TextField(default="", verbose_name="請輸入全名")
+    orderID = models.TextField()
+    loginID = models.TextField(primary_key=True, verbose_name="LineID")
+    name = models.TextField(default="", verbose_name="請輸入全名")
     email = models.TextField(max_length=50, default="", verbose_name="ex:xxxx@gmail.com", blank=True)
     phone = models.TextField(max_length=10, default="", verbose_name="ex:0912345678")
     timeStamp = models.DateTimeField()
