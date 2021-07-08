@@ -13,6 +13,8 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -23,13 +25,16 @@ SECRET_KEY = 'django-insecure-q)(p1+k&^jvs^*$cu1zp#3*k1u(!k%h@wzh124-_8e!e_af9+5
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+CSRF_COOKIE_HTTPONLY = True
+if DEBUG is True:
+    SESSION_COOKIE_SECURE = False
+else:
+    SESSION_COOKIE_SECURE = True
 ALLOWED_HOSTS = []
 
 # Application definition
 
 INSTALLED_APPS = [
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -37,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
-    'application.apps.ApplicationConfig'
+    'application.apps.ApplicationConfig',
+    'preview.apps.PreviewConfig'
 ]
 
 MIDDLEWARE = [
@@ -75,7 +81,7 @@ WSGI_APPLICATION = 'Web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'Database/db.sqlite3'),
     }
 }
 
@@ -101,7 +107,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
+LANGUAGE = (
+    ('zh-cn', u'简体中文'),  # instead of 'zh-CN'
+    ('zh-tw', u'繁體中文'),  # instead of 'zh-TW'
+)
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

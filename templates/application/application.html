@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    <h1>Application List</h1>
+    <form action="" method="post">
+        <div class="form-group">
+            <div class="form-group col-md-6">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {{ form2.as_p }}
+                <input class="btn btn-success" type="submit" value="儲存" content='text/html; charset=UTF-8'/>
+            </div>
+        </div>
+    </form>
+
+</h1>
+
+
+</body>
+</html>
