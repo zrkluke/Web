@@ -52,7 +52,7 @@ def createApplication(request):
             'form': form,
             'form2': form2
         }
-        return render(request, 'application/application.html', context)
+        return render(request, 'application.html', context)
     else:
         orderID = checkOrderID(datetime.date.today().strftime('%Y%m%d'), 1)
         request.POST = request.POST.copy()
@@ -69,22 +69,10 @@ def createApplication(request):
                 form2.save()
 
         CreateOrder(form, LineID, orderID)
-        form = forms.PromissoryForm
-        form2 = forms.CustomerForm
         context = {
-            'form': form,
-            'form2': form2,
+            'orderID': orderID,
         }
-    return render(request, './application/preview/preview.html', context)
-
-
-def getApplication(request, id):
-    if request.method == 'GET':
-        form = get_object_or_404(forms.PromissoryForm, id=id)
-        context = {
-            'form': form
-        }
-        return render(request, 'application/preview/preview.html', context)
+    return render(request, './application/preview.html', context)
 
 
 

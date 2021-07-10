@@ -4,6 +4,7 @@ from application.base import model_base
 
 
 class ApplicationForm(forms.ModelForm):
+
     def __init__(self, *args, **kwargs):
         super(ApplicationForm, self).__init__(*args, **kwargs)
         self.fields['field'].widget.attrs['readonly'] = True
