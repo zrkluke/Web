@@ -70,9 +70,12 @@ def createApplication(request):
 
         CreateOrder(form, LineID, orderID)
         context = {
-            'orderID': orderID,
+            'form': form,
         }
     return render(request, './application/preview.html', context)
+
+def ticket(request):
+    return render(request, "ticket.html")
 
 
 

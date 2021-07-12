@@ -1,10 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Responsive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+    <meta name="keywords" content='線上書狀、書狀不求人、法律書狀' />
+    <meta name="description" content="線上書狀不求人，提供專業法律書狀" /> 
+    -->
+    <!-- 提供搜尋引擎關於網頁頁面內的重要資訊-->
+    
+    <title>{% block title %}Easy! 書狀不求人-自己輕鬆DIY書狀{% endblock %}</title>
+    {% load static %} <!--Instruct Django to load static files-->
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css" />
+    <!--<link rel="stylesheet" href="{% static 'base.css' %}" type="text/css" />-->
+    <link rel="stylesheet" href="{% static 'index.css' %}" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" /> <!--Google icons*/-->
+    {% block Styles %}{% endblock %}
+   
+
+    <!--Needed for application selector-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" 
+            crossorigin="anonymous"> 
+    </script> 
+    {% block Scripts %}{% endblock %}
+    {% block head-extras %}}{% endblock %}
 </head>
 <body>
+  <header>
+    <!--Navbar header-->
+    <nav class="navbar navbar-light navbar-custom fixed-top navbar-expand-lg ">
+      <div class="container-fluid d-flex">
+        <a class="navbar-brand flex-grow-1" href="{% url 'index' %}" target="_blank">Easy! 書狀不求人</a>
 
+        <button class="navbar-toggler m-1 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                金錢債務
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'ticket' %}">本票</a></li>
+                <li><a class="dropdown-item" href="{% url 'application' %}">支票</a></li>
+                <li><a class="dropdown-item" href="#">借款</a></li>
+                <li><a class="dropdown-item" href="#">貨款</a></li>
+                <li><a class="dropdown-item" href="#">通用起訴狀</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                婚姻感情
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">離婚</a></li>
+                <li><a class="dropdown-item" href="#">給付扶養費</a></li>
+                <li><a class="dropdown-item" href="#">酌定會面交往權</a></li>
+                <li><a class="dropdown-item" href="#">夫妻剩餘財產</a></li>
+                <li><a class="dropdown-item" href="#">離婚協議書</a></li>
+                <li><a class="dropdown-item" href="#">通用起訴狀</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                居住鄰損
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">房租欠繳</a></li>
+                <li><a class="dropdown-item" href="#">押金催討</a></li>
+                <li><a class="dropdown-item" href="#">漏水修繕費</a></li>
+                <li><a class="dropdown-item" href="#">請求漏水修繕</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                交通事故
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">車禍賠償</a></li>
+                <li><a class="dropdown-item" href="#">通用起訴狀</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                勞資爭議
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">雇傭關係存在</a></li>
+                <li><a class="dropdown-item" href="#">給付資遣費</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                遺囑
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">自書遺囑</a></li>
+                <li><a class="dropdown-item" href="#">律師見證遺囑</a></li>
+                <li><a class="dropdown-item" href="#">其他遺囑介紹</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                其他書狀
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">支付命令</a></li>
+                <li><a class="dropdown-item" href="#">民事調解聲請狀</a></li>
+                <li><a class="dropdown-item" href="#">存證信函</a></li>
+                <li><a class="dropdown-item" href="#">強制執行聲請</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">法律諮詢</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">專業法律顧問</a>
+            </li>
+          </ul>
+        </div>
+        <a class="navbar-brand m-1 p-1" target="_blank" href="https://www.facebook.com">
+          <span class="material-icons">
+            facebook
+          </span>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <h1><br/></h1>
+
+  <main>
+    {% block content %}{% endblock %}
+
+  <!--footer-->
+  <footer class="container-fluid">
+    <hr>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <strong>找不到想要的書狀? &emsp;想尋求律師服務? &emsp;</strong>
+        <a href="#" class="cta">
+          <span>聯絡我們</span>
+          <svg width="13px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <br>
+    <div class="copyright row justify-content-center">
+      <div class="col-auto"><small>著作權 &COPY; 2021 線上書狀不求人 版權所有</small></div>
+      <div class="col-auto"><small>Copyright &copy; 2021 線上書狀不求人 All rights reserved.</small></div>
+    </div>
+  </footer>
+
+  <script src="../static/bootstrap.bundle.min.js"></script>
+  <script src="../static/custom.js"></script>
+ 
+{% block scripts %}{% endblock %}
 </body>
 </html>

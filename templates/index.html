@@ -1,0 +1,404 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+  {% block Styles %}
+    <link rel="stylesheet" href="{% static 'index.css' %}" type="text/css" />
+  {% endblock %}
+
+
+  {% block content %}
+  <!--Logo and Webname-->
+  <!--Terminal text-->
+  <div class='console-container'>
+    <span id='text'></span>
+    <div class='console-underscore' id='console'>&#95;</div>
+  </div>
+  <!--End of Termival text-->
+
+  <br>
+  <br>
+  <!--<h1>書狀不求人，自己能完成</h1>-->
+  <h2>線上書狀不求人，我們幫你來完成</h2>
+  <h3>線上書狀不求人，網站點點就完成</h3>
+  <h4>線上書狀不求人，資料輸入就完成</h4>
+  <h4>法律書狀不求人，線上快速就搞定</h4>
+  <div class="mainvisual">
+      <img class="rounded-pill" id="logo" src="../media/pexels-cqfavocat-613508.jpg" alt="Wedsite Logo">
+  </div>
+  <br/>
+
+  <!--Information in carousel slides-->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img src="../media/pexels-andrea-piacquadio-3760067.jpg" class="d-block w-100 img-fluid" alt="404 not found">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="../media/pexels-pixabay-48148.jpg" class="d-block w-100 img-fluid" alt="404 not found">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../media/pexels-pixabay-327540.jpg" class="d-block w-100 img-fluid" alt="404 not found">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  
+
+  <!--application selector-->
+  <h1><strong>尋找書狀</strong></h1>
+  <div class="container-fluid">
+      <div class="row justify-content-center row-cols-sm-auto row-cols-md-auto g-2">
+          <div class="col-4">
+              <div class="d-flex justify-content-center">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="application" autocomplete="off" checked>
+                  <label class="btn btn-outline-secondary" for="btnradio1">所有書狀</label>
+              </div>
+          </div>
+
+          <div class="col-4">
+              <div class="d-flex justify-content-center">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" value="money" autocomplete="off">
+                  <label class="btn btn-outline-secondary" for="btnradio2">金錢債務類</label>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="d-flex justify-content-center">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" value="relationship" autocomplete="off">
+                  <label class="btn btn-outline-secondary" for="btnradio3">婚姻感情類</label>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="d-flex justify-content-center">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio4" value="house" autocomplete="off">
+                  <label class="btn btn-outline-secondary" for="btnradio4">居住鄰損類</label>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="d-flex justify-content-center">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio5" value="car" autocomplete="off">
+                  <label class="btn btn-outline-secondary" for="btnradio5">交通事故類</label>
+              </div>
+          </div>
+
+          <div class="col-4">
+            <div class="d-flex justify-content-center">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio6" value="labor" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="btnradio6">勞資爭議類</label>
+            </div>
+          </div>
+          
+          <div class="col-4">
+            <div class="d-flex justify-content-center">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio7" value="will" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="btnradio7">遺囑類</label>
+            </div>
+          </div>
+
+          <div class="col-4">
+              <div class="d-flex justify-content-center">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio8" value="others" autocomplete="off">
+                  <label class="btn btn-outline-secondary" for="btnradio8">其他類</label>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!--application cards-->
+  <div class="container-fluid">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-1 m-1 p-1">
+
+          <div class="text-center p-3 g-2 application money">
+            <div class="card">
+              <img src="../media/pexels-roman-odintsov-4553619.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h3 class="card-title"><strong>本票</strong></h3>
+                  <a href="{% url 'ticket' %}" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application money">
+            <div class="card">
+              <img src="../media/pexels-lukas-928184.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h3 class="card-title"><strong>支票</strong></h3>
+                  <a href="{% url 'application' %}" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application money">
+            <div class="card">
+              <img src="../media/pexels-lukas-928184.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h3 class="card-title"><strong>借款</strong></h3>
+                  <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application money">
+            <div class="card">
+              <img src="../media/pexels-pixabay-164688.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">貨款</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application money">
+            <div class="card">
+              <img src="../media/pexels-pixabay-164688.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">通用起訴狀</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application relationship">
+            <div class="card">
+              <img src="../media/pexels-wallace-araujo-3491999.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3 class="card-title">離婚</h3>
+                  <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+                </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application relationship">
+            <div class="card">
+              <img src="../media/pexels-emma-bauso-2253879.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">給付扶養費</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application relationship">
+            <div class="card">
+              <img src="../media/pexels-emma-bauso-2253879.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">酌定會面交往權</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application relationship">
+            <div class="card">
+              <img src="../media/pexels-emma-bauso-2253879.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">夫妻剩餘財產</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application relationship">
+            <div class="card">
+              <img src="../media/pexels-emma-bauso-2253879.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">離婚協議書</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application relationship">
+            <div class="card">
+              <img src="../media/pexels-emma-bauso-2253879.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">通用起訴狀</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application house">
+            <div class="card">
+              <img src="../media/pexels-max-vakhtbovych-6933768.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">房租欠繳</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center p-3 g-2 application house">
+            <div class="card">
+              <img src="../media/pexels-karolina-grabowska-4386421.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">押金催討</h3>
+                <a href="#" class="btn btn-outline-secondary">線上書狀製作</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center p-3 g-2 application house">
+            <div class="card">
+              <img src="../media/pexels-karolina-grabowska-4386421.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">漏水修繕費</h3>
+                <a href="#" class="btn btn-outline-secondary">線上書狀製作</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application house">
+            <div class="card">
+              <img src="../media/pexels-karolina-grabowska-4386421.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">通用起訴狀（修繕）</h3>
+                <a href="#" class="btn btn-outline-secondary">線上書狀製作</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application car">
+            <div class="card">
+              <img src="../media/pexels-pixabay-163016.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">車禍賠償</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application car">
+            <div class="card">
+              <img src="../media/pexels-mike-1035108.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">通用起訴狀</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center p-3 g-2 application labor">
+            <div class="card">
+              <img src="../media/pexels-lukas-684387.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">雇傭關係存在</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application labor">
+            <div class="card">
+              <img src="../media/pexels-lukas-684387.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">給付資遣費</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application will">
+            <div class="card">
+              <img src="../media/pexels-pixabay-161280.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">自書遺囑</h3>
+                <a href="#" class="btn btn-outline-secondary">遺囑書狀製作</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application will">
+            <div class="card">
+              <img src="../media/pexels-pixabay-161280.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">律師見證遺囑</h3>
+                <a href="#" class="btn btn-outline-secondary">遺囑書狀製作</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center p-3 g-2 application others">
+            <div class="card">
+              <img src="../media/pexels-pascal-renet-1089306.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">支付命令</h3>
+                <a href="#" class="btn btn-outline-secondary">書狀製作</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center p-3 g-2 application others">
+            <div class="card">
+              <img src="../media/pexels-pascal-renet-1089306.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">民事調解聲請狀</h3>
+                <a href="#" class="btn btn-outline-secondary">書狀製作</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center p-3 g-2 application others">
+            <div class="card">
+              <img src="../media/pexels-nataliya-vaitkevich-6863181.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">存證信函</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center p-3 g-2 application others">
+            <div class="card">
+              <img src="../media/pexels-nataliya-vaitkevich-6863181.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">強制執行聲請</h3>
+                <a href="#" class="btn btn-outline-secondary">馬上填寫</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </main>
+  
+  <!--shortcut link-->
+  <div class="container-fluid">
+    <div class="row justify-content-end">
+      <div class="col-auto">
+        <a class="shortcut" href="#carouselExampleCaptions">
+          <strong>回到本頁使用說明懶人包</strong>
+          <span class="material-icons" style="vertical-align:bottom;">
+            arrow_upward
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+</body>
+</html>

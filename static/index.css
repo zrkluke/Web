@@ -1,0 +1,96 @@
+h1, h2, h3, h4{
+    margin: 0;
+    padding: 20px 0;
+    color: #915c4c; /*栗子色chestnut*/
+    text-align: center;
+    }
+    #logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    }
+    
+    .carousel-item img{
+    width: 50%;
+    height: 50%;
+    }
+    
+    /* Cards 書狀卡片css設定 */
+    .card{
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .card img{
+    border-radius: 15px 15px 0px 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .card h3{
+    margin: 0;
+    padding: 20px 0;
+    color: #EE6A22; /*錦鯉*/
+    color: #fe6323; /*orange*/
+    text-align: center;
+    font-weight: bold;
+    }
+    
+    /*卡片互動背景變色動畫*/
+    .card:hover{
+    background-color: lightgoldenrodyellow;
+    }
+    /* End of Cards */
+    
+    /*Terminal Text Effect*/
+    @import url(https://fonts.googleapis.com/css?family=Khula:700);
+    
+    .hidden {
+    opacity:0;
+    }
+    .console-container {
+    font-family:Khula;
+    font-size:36px;
+    text-align:center;
+    height:400px;
+    width:80%;
+    display:block;
+    position:absolute;
+    color:white;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    }
+    .console-underscore {
+    display:inline-block;
+    position:relative;
+    top:-0.14em;
+    left:10px;
+    }
+    /*End of Terminal Text Effect*/
+    
+    /* Shake Effect*/
+    .card:hover {
+    /* Start the shake animation and make the animation last for 300 miliseconds */
+    animation-name: shake;
+    animation-duration: 300ms;
+    }
+    
+    @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    /* 10% { transform: translate(-1px, -2px) rotate(-1deg); } */
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    /* 30% { transform: translate(3px, 2px) rotate(0deg); } */
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    /* 50% { transform: translate(-1px, 2px) rotate(-1deg); } */
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    /* 70% { transform: translate(3px, 1px) rotate(-1deg); } */
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    /* 90% { transform: translate(1px, 2px) rotate(0deg); } */
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
+    /*End of Shake Effect*/
+    
+    

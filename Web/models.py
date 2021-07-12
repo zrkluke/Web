@@ -7,6 +7,7 @@ class Customer(models.Model):
 
     name = models.CharField(max_length=50)
     GUID = uuid.uuid4()
+    
 
     def __str__(self):
         return self.name

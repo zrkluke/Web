@@ -14,7 +14,7 @@ items = "{[1,2,3]}"
 
 
 class Consumer(models.Model):
-    LineID = models.CharField(max_length=1024, primary_key=True, verbose_name="LineID")
+    LineID = models.CharField(max_length=1024, primary_key=True, verbose_name="LineID") # validators=function 將檢查邏輯寫在function裡面
     name = models.CharField(max_length=1024, default="", verbose_name="請輸入全名")
     email = models.CharField(max_length=1024, default="", verbose_name="ex:xxxx@gmail.com", blank=True)
     phone = models.CharField(max_length=10, default="", verbose_name="ex:0912345678")
